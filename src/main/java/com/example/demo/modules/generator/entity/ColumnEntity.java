@@ -1,0 +1,117 @@
+package com.example.demo.modules.generator.entity;
+
+/**
+ * @Auther: liuc
+ * @Date: 18-12-16 16:12
+ * @email i@liuchaoboy.com
+ * @Description: 数据表列属性
+ */
+public class ColumnEntity {
+    /**
+     * 列名
+     */
+    private String columnName;
+
+    /**
+     * 数据类型
+     */
+    private String dataType;
+
+    /**
+     * 列注释
+     */
+    private String columnComment;
+
+    /**
+     * 属性名，作为类属性名（userId）
+     */
+    private String fieldName;
+
+    /**
+     * 属性名，作为类方法名（UserId）
+     */
+    private String methodName;
+
+    /**
+     * 列数据类型对应java数据类型
+     */
+    private String fieldType;
+
+    /**
+     * 键类型标识
+     */
+    private String columnKey;
+
+    /**
+     * 自增标识 auto_increment
+     */
+    private String extra;
+
+    public ColumnEntity() {
+        super();
+    }
+
+    public String getColumnName() {
+        return columnName;
+    }
+
+    public void setColumnName(String columnName) {
+        this.columnName = columnName;
+    }
+
+    public String getDataType() {
+        return dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    public String getColumnComment() {
+        return columnComment;
+    }
+
+    public void setColumnComment(String columnComment) {
+        this.columnComment = columnComment;
+    }
+
+    public String getFieldName() {
+        return fieldName;
+    }
+
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
+    }
+
+    public String getMethodName() {
+        return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
+    }
+
+    public String getFieldType() {
+        return fieldType;
+    }
+
+    public void setFieldType(String fieldType) {
+        this.fieldType = fieldType;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+
+    public void setExtra(String extra) {
+        this.extra = extra;
+    }
+
+    public String getColumnKey() {
+        return columnKey;
+    }
+
+    public void setColumnKey(String columnKey) {
+        this.columnKey = columnKey;
+    }
+}

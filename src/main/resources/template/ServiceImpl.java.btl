@@ -1,0 +1,86 @@
+package ${package}.modules.${module}.service.impl;
+
+import java.util.Map;
+
+import com.example.demo.modules.generator.entity.Page;
+import com.example.demo.modules.generator.entity.Query;
+import com.example.demo.modules.generator.entity.ResponseEntity;
+import com.example.demo.modules.users.dao.UserMapper;
+import com.example.demo.modules.users.entity.UserEntity;
+import com.example.demo.modules.users.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.example.demo.common.utils.CommonUtils;
+
+/**
+ * ${comments}
+ * @author ${author}
+ * @email  ${email}
+ * @date  ${datetime}
+ */
+@Service("${objName}Service")
+public class ${className}ServiceImpl implements ${className}Service {
+
+	@Autowired
+    private ${className}Mapper ${objName}Mapper;
+
+    /**
+     * 分页查询
+     * @param params
+     * @return
+     */
+	@Override
+	public Page<${className}Entity> list${className}(Map<String, Object> params) {
+		Query query = new Query(params);
+		Page<${className}Entity> page = new Page<>(query);
+		${objName}Mapper.listForPage(page, query);
+		return page;
+	}
+
+    /**
+     * 新增
+     * @param ${objName}
+     * @return
+     */
+	@Override
+	public ResponseEntity save${className}(${className}Entity ${objName}) {
+		int count = ${objName}Mapper.save(${objName});
+		return CommonUtils.msg(count);
+	}
+
+    /**
+     * 根据id查询
+     * @param id
+     * @return
+     */
+	@Override
+	public ResponseEntity get${className}ById(Long id) {
+		${className}Entity ${objName} = ${objName}Mapper.getObjectById(id);
+		return CommonUtils.msg(${objName});
+	}
+
+    /**
+     * 修改
+     * @param ${objName}
+     * @return
+     */
+	@Override
+	public ResponseEntity update${className}(${className}Entity ${objName}) {
+		int count = ${objName}Mapper.update(${objName});
+		return CommonUtils.msg(count);
+	}
+
+    /**
+     * 删除
+     * @param id
+     * @return
+     */
+	@Override
+	public ResponseEntity batchRemove(Long[] id) {
+		int count = ${objName}Mapper.batchRemove(id);
+		return CommonUtils.msg(id, count);
+	}
+
+}
